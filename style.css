@@ -1,0 +1,143 @@
+.contener1 {
+
+
+   margin-top: 50px;
+    display: flex;
+    justify-content:center;
+
+}
+
+
+
+
+.contener2{
+
+   
+    display: flex;
+    justify-content:center;
+
+}
+
+
+ .contener3 {
+
+
+
+display: flex;
+justify-content:center;
+
+
+}
+
+
+
+
+
+#number0 {
+
+    width: 250px;
+    height: 200px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+
+}
+
+
+
+ #number1 
+ {
+
+    width: 250px;
+    height: 200px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+
+
+ }
+ 
+ #number2 {
+
+
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    width: 250px;
+    height: 200px;
+
+}
+
+
+
+#number3 {
+
+    width: 250px;
+    height: 200px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;;
+
+
+}
+
+
+#number4 {
+
+    width: 250px;
+    height: 200px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+
+}
+
+
+
+
+
+
+#number5 {
+
+
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+
+    width: 250px;
+    height: 200px;
+
+}
+
+#number6 {
+
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    width: 250px;
+    height: 200px;
+
+}
+
+
+ #number7 
+ {
+    
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    width: 250px;
+    height: 200px;
+
+
+ }
+ 
+ #number8 {
+
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    width: 250px;
+    height: 200px;
+
+}
+
+
+
