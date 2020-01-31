@@ -20,6 +20,7 @@ const myCallback0 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number0");
     newImgVid.append(img);
+    number0.removeEventListener(eventType ,myCallback0)
 }
 
 const myCallback1 = function () {
@@ -30,6 +31,7 @@ const myCallback1 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number1");
     newImgVid.append(img);
+    number1.removeEventListener(eventType ,myCallback1)
 }
 
 
@@ -41,6 +43,7 @@ const myCallback2 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number2");
     newImgVid.append(img);
+    number2.removeEventListener(eventType ,myCallback2)
 }
 
 
@@ -53,6 +56,7 @@ const myCallback3 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number3");
     newImgVid.append(img);
+    number3.removeEventListener(eventType ,myCallback3)
 }
 
 const myCallback4 = function () {
@@ -63,6 +67,7 @@ const myCallback4 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number4");
     newImgVid.append(img);
+    number4.removeEventListener(eventType ,myCallback4)
 }
 
 const myCallback5 = function () {
@@ -73,6 +78,7 @@ const myCallback5 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number5");
     newImgVid.append(img);
+    number5.removeEventListener(eventType ,myCallback5)
 }
 
 const myCallback6 = function () {
@@ -83,6 +89,7 @@ const myCallback6 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number6");
     newImgVid.append(img);
+    number6.removeEventListener(eventType ,myCallback6)
 }
 const myCallback7 = function () {
     const img = document.createElement("img");
@@ -92,6 +99,7 @@ const myCallback7 = function () {
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number7");
     newImgVid.append(img);
+    number7.removeEventListener(eventType ,myCallback7)
 }
 
 const myCallback8 = function () {
@@ -101,9 +109,10 @@ const myCallback8 = function () {
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number8");
-   
-    newImgVid.append(img);
+   newImgVid.append(img);
+   number8.removeEventListener(eventType ,myCallback8)
 
+   
 }
 
 
