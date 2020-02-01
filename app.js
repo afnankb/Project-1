@@ -22,7 +22,7 @@ const myCallback0 = function () {
     newImgVid.append(img);
     number0.removeEventListener(eventType, myCallback0)
     winORLose();
-   
+
 }
 
 const myCallback1 = function () {
@@ -35,7 +35,7 @@ const myCallback1 = function () {
     newImgVid.append(img);
     number1.removeEventListener(eventType, myCallback1)
     winORLose();
-    
+
 }
 
 
@@ -49,7 +49,7 @@ const myCallback2 = function () {
     newImgVid.append(img);
     number2.removeEventListener(eventType, myCallback2)
     winORLose();
-    
+
 }
 
 
@@ -64,7 +64,7 @@ const myCallback3 = function () {
     newImgVid.append(img);
     number3.removeEventListener(eventType, myCallback3)
     winORLose();
-    
+
 }
 
 const myCallback4 = function () {
@@ -77,7 +77,7 @@ const myCallback4 = function () {
     newImgVid.append(img);
     number4.removeEventListener(eventType, myCallback4)
     winORLose();
-    
+
 }
 
 const myCallback5 = function () {
@@ -90,7 +90,7 @@ const myCallback5 = function () {
     newImgVid.append(img);
     number5.removeEventListener(eventType, myCallback5)
     winORLose();
-   
+
 }
 
 const myCallback6 = function () {
@@ -103,7 +103,7 @@ const myCallback6 = function () {
     newImgVid.append(img);
     number6.removeEventListener(eventType, myCallback6)
     winORLose();
-    
+
 }
 
 const myCallback7 = function () {
@@ -116,7 +116,7 @@ const myCallback7 = function () {
     newImgVid.append(img);
     number7.removeEventListener(eventType, myCallback7)
     winORLose();
-   
+
 }
 
 const myCallback8 = function () {
@@ -129,68 +129,61 @@ const myCallback8 = function () {
     newImgVid.append(img);
     number8.removeEventListener(eventType, myCallback8)
     winORLose();
-    
+
 
 }
-  
+
 
 
 const winORLose = function () {
-    
-     
-        
-        if (numberOfclick >= 5 ) {
 
-             
-                if ((XOrOList[0]!=null)&&(XOrOList[1]!=null)&&(XOrOList[2]!=null)&&(XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
 
-                    console.log("win")
+        if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
 
-                }
-                else if   ((XOrOList[3]!=null)&&(XOrOList[4]!=null)&&(XOrOList[5]!=null)&&(XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
+            console.log("win")
 
-                    console.log("win")
+        } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
 
-                }
-                else if   ((XOrOList[6]!=null)&&(XOrOList[7]!=null)&&(XOrOList[8]!=null)&&(XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
+            console.log("win")
 
-                    console.log("win")
+        } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
 
-                }
+            console.log("win")
 
-                else if ((XOrOList[0]!=null)&&(XOrOList[3]!=null)&&(XOrOList[6]!=null)&&(XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
+        } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
 
-                    console.log("win")
+            console.log("win")
 
-                }
+        } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
 
-                else if ((XOrOList[1]!=null)&&(XOrOList[4]!=null)&&(XOrOList[7]!=null)&&(XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
+            console.log("win")
 
-                    console.log("win")
+        } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
 
-                }
-                else if ((XOrOList[2]!=null)&&(XOrOList[5]!=null)&&(XOrOList[8]!=null)&&(XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
+            console.log("win")
 
-                    console.log("win")
+        } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
 
-                }
-                else if ((XOrOList[0]!=null)&&(XOrOList[4]!=null)&&(XOrOList[8]!=null)&&(XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
+            console.log("win")
 
-                    console.log("win")
+        } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[6])) {
 
-                }
-                else if ((XOrOList[2]!=null)&&(XOrOList[5]!=null)&&(XOrOList[6]!=null)&&(XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[6])) {
+            console.log("win")
 
-                    console.log("win")
-
-                }
         }
-    }
 
+        else {
 
+            console.log("play")
 
-        
+        }
     
+}
+
+
+
+
+
 
 
 
@@ -198,13 +191,13 @@ const winORLose = function () {
 const selectXorO = function (index) {
     // x
     if (numberOfclick % 2 == 0) {
-            XOrOList[index]="x";
+        XOrOList[index] = "x";
         return ("x.png")
 
     }
     // O
     else {
-        XOrOList[index]="o";
+        XOrOList[index] = "o";
         return ("o.png")
 
 
