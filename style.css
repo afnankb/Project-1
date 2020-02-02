@@ -182,6 +182,24 @@ justify-content:center;
   }
 
 
+  @media only screen and (max-width: 400px) {
+    img {
+
+       width: 100px;
+       height: 100px;
+    }
+    #number0,#number1,#number2,#number3,#number4,#number5,#number6
+    ,#number7,#number8{
+
+        width: 100px;
+        height: 100px;
+
+    }
+
+    
+  }
+
+
 
   
 
