@@ -15,6 +15,12 @@ const number6 = document.querySelector('#number6');
 const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 
+// funcition to play the sound when user click 
+function myPlay(){
+    var audio = new Audio("Click.mp3");
+    audio.play();
+}
+
 // create funcitons to click back if the user click
 // 1. create img element 
 // 2. select the type of img 
@@ -25,6 +31,7 @@ const number8 = document.querySelector('#number8');
 // 7 . know if the user win or lose or tie 
 
 const myCallback0 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(0);
     numberOfclick++;
@@ -38,12 +45,13 @@ const myCallback0 = function () {
 }
 
 const myCallback1 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(1);
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number1");
+    const newImg = document.querySelector("#number1");
     newImg.append(img);
     newImg.removeEventListener(eventType, myCallback1)
     winORLose();
@@ -52,6 +60,7 @@ const myCallback1 = function () {
 
 
 const myCallback2 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(2);
     numberOfclick++;
@@ -66,7 +75,7 @@ const myCallback2 = function () {
 
 
 const myCallback3 = function () {
-
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(3);
     numberOfclick++;
@@ -80,6 +89,7 @@ const myCallback3 = function () {
 }
 
 const myCallback4 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(4);
     numberOfclick++;
@@ -93,6 +103,7 @@ const myCallback4 = function () {
 }
 
 const myCallback5 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(5);
     numberOfclick++;
@@ -106,6 +117,7 @@ const myCallback5 = function () {
 }
 
 const myCallback6 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(6);
     numberOfclick++;
@@ -119,6 +131,7 @@ const myCallback6 = function () {
 }
 
 const myCallback7 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(7);
     numberOfclick++;
@@ -132,6 +145,7 @@ const myCallback7 = function () {
 }
 
 const myCallback8 = function () {
+    myPlay();
     const img = document.createElement("img");
     const scr = selectXorO(8);
     numberOfclick++;
