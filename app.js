@@ -1,6 +1,10 @@
+// create event 
 const eventType = 'click';
+// create number of click to know who is click first player or second 
 let numberOfclick = 0;
+// create list to add if it's X or o 
 const XOrOList = [];
+// create query selector for all element 
 const number0 = document.querySelector('#number0');
 const number1 = document.querySelector('#number1');
 const number2 = document.querySelector('#number2');
@@ -11,6 +15,14 @@ const number6 = document.querySelector('#number6');
 const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 
+// create funcitons to click back if the user click
+// 1. create img element 
+// 2. select the type of img 
+// 3. increce the number of click 
+// 4. set src attribute and width 
+// 5. append the img to the page 
+// 6. remove event listener to anable the user to click again
+// 7 . know if the user win or lose or tie 
 
 const myCallback0 = function () {
     const img = document.createElement("img");
@@ -18,8 +30,8 @@ const myCallback0 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number0");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number0");
+    newImg.append(img);
     number0.removeEventListener(eventType, myCallback0)
     winORLose();
 
@@ -32,8 +44,8 @@ const myCallback1 = function () {
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
     const newImgVid = document.querySelector("#number1");
-    newImgVid.append(img);
-    number1.removeEventListener(eventType, myCallback1)
+    newImg.append(img);
+    newImg.removeEventListener(eventType, myCallback1)
     winORLose();
 
 }
@@ -45,8 +57,8 @@ const myCallback2 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number2");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number2");
+    newImg.append(img);
     number2.removeEventListener(eventType, myCallback2)
     winORLose();
 
@@ -60,8 +72,8 @@ const myCallback3 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number3");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number3");
+    newImg.append(img);
     number3.removeEventListener(eventType, myCallback3)
     winORLose();
 
@@ -73,8 +85,8 @@ const myCallback4 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number4");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number4");
+    newImg.append(img);
     number4.removeEventListener(eventType, myCallback4)
     winORLose();
 
@@ -86,8 +98,8 @@ const myCallback5 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number5");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number5");
+    newImg.append(img);
     number5.removeEventListener(eventType, myCallback5)
     winORLose();
 
@@ -99,8 +111,8 @@ const myCallback6 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number6");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number6");
+    newImg.append(img);
     number6.removeEventListener(eventType, myCallback6)
     winORLose();
 
@@ -112,8 +124,8 @@ const myCallback7 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number7");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number7");
+    newImg.append(img);
     number7.removeEventListener(eventType, myCallback7)
     winORLose();
 
@@ -125,15 +137,19 @@ const myCallback8 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    const newImgVid = document.querySelector("#number8");
-    newImgVid.append(img);
+    const newImg = document.querySelector("#number8");
+    newImg.append(img);
     number8.removeEventListener(eventType, myCallback8)
     winORLose();
 
 
 }
 
-
+// Funcition win or lose 
+// 1. check first if the element  not null
+// 2. check if all 3 element have the same value 
+// 3. shake the img 
+// 4. set timer to sure the img is upload
 
 const winORLose = function () {
 
@@ -179,16 +195,17 @@ const winORLose = function () {
         number4.setAttribute("class","shake")
         number8.setAttribute("class","shake")
         setTimeout("popMessageWin()", 500);
-
+           
     } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
         number2.setAttribute("class","shake")
         number4.setAttribute("class","shake")
         number6.setAttribute("class","shake")
         setTimeout("popMessageWin()", 500);
-
+     // if the number of click equal to 9 so no one win 
     } else if (numberOfclick === 9) {
         setTimeout("popMessageTie()", 500);
-
+    
+        // to know who is next 
 
     } else {
 
@@ -205,7 +222,7 @@ const winORLose = function () {
 
 }
 
-
+// pop massege to tell the user you are win 
 const popMessageWin = function () {
 
     var ask = window.confirm(" You  Are  win ");
@@ -217,7 +234,7 @@ const popMessageWin = function () {
 
 }
 
-
+// pop massege to tell the users you are tie 
 const popMessageTie = function () {
 
     var ask = window.confirm(" Tie , No one win ");
@@ -231,10 +248,12 @@ const popMessageTie = function () {
 
 
 
-
+// select who is play 
 const selectXorO = function (index) {
     // x
+
     if (numberOfclick % 2 == 0) {
+        // add it to the list 
         XOrOList[index] = "x";
         return ("x.png")
 
@@ -249,7 +268,7 @@ const selectXorO = function (index) {
 
 }
 
-
+// add event listener 
 number0.addEventListener(eventType, myCallback0);
 number1.addEventListener(eventType, myCallback1);
 number2.addEventListener(eventType, myCallback2);
