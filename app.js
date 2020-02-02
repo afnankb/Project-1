@@ -139,40 +139,56 @@ const winORLose = function () {
 
 
     if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
-
-        popMessageWin();
+        number0.setAttribute("class","shake")
+        number1.setAttribute("class","shake")
+        number2.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
-
-        popMessageWin();
+        number3.setAttribute("class","shake")
+        number4.setAttribute("class","shake")
+        number5.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
-
-        popMessageWin();
+        number6.setAttribute("class","shake")
+        number7.setAttribute("class","shake")
+        number8.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
-
-        popMessageWin();
+        number0.setAttribute("class","shake")
+        number3.setAttribute("class","shake")
+        number6.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
-
-        popMessageWin();
+        number1.setAttribute("class","shake")
+        number4.setAttribute("class","shake")
+        number7.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
-
-        popMessageWin();
+        number2.setAttribute("class","shake")
+        number5.setAttribute("class","shake")
+        number8.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
+        number0.setAttribute("class","shake")
+        number4.setAttribute("class","shake")
+        number8.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
-        popMessageWin();
-
-    } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[6])) {
-
-        popMessageWin();
+    } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
+        number2.setAttribute("class","shake")
+        number4.setAttribute("class","shake")
+        number6.setAttribute("class","shake")
+        setTimeout("popMessageWin()", 500);
 
     } else if (numberOfclick === 9) {
+        setTimeout("popMessageTie()", 500);
 
-        popMessageTie();
 
     } else {
 
@@ -194,7 +210,7 @@ const popMessageWin = function () {
 
     var ask = window.confirm(" You  Are  win ");
     if (ask) {
-        
+
         document.location.reload();
 
     }
@@ -206,7 +222,7 @@ const popMessageTie = function () {
 
     var ask = window.confirm(" Tie , No one win ");
     if (ask) {
-        
+
         document.location.reload();
 
     }
