@@ -138,66 +138,80 @@ const myCallback8 = function () {
 const winORLose = function () {
 
 
-        if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
+    if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
+    } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
+    } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
+    } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
+    } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
+    } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
+    } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
 
-            console.log("win")
+        popMessageWin();
 
-        } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[6])) {
+    } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[6])) {
 
-            console.log("win")
+        popMessageWin();
+
+    } else if (numberOfclick === 9) {
+
+        popMessageTie();
+
+    } else {
+
+        whoIsPlayNext = document.querySelector("#whoIsNext");
+        if (numberOfclick % 2 == 0) {
+
+            whoIsPlayNext.innerHTML = " next play x ";
+
+        } else {
+            whoIsPlayNext.innerHTML = " next play o ";
 
         }
+    }
 
-        else if (numberOfclick === 9){
-            
-            console.log("tie")
-
-        }
-
-        else {
-            
-            whoIsPlayNext = document.querySelector("#whoIsNext");
-            if (numberOfclick % 2 == 0) {
-
-                whoIsPlayNext.innerHTML = " next play x " ;
-            
-            }
-            else {
-                whoIsPlayNext.innerHTML = " next play o ";
-                
-            }
-        }
-    
 }
 
 
+const popMessageWin = function () {
+
+    var ask = window.confirm(" You  Are  win ");
+    if (ask) {
+        
+        document.location.reload();
+
+    }
+
+}
 
 
+const popMessageTie = function () {
 
+    var ask = window.confirm(" Tie , No one win ");
+    if (ask) {
+        
+        document.location.reload();
+
+    }
+
+}
 
 
 
