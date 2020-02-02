@@ -172,10 +172,24 @@ const winORLose = function () {
 
         }
 
+        else if (numberOfclick === 9){
+            
+            console.log("tie")
+
+        }
+
         else {
+            
+            whoIsPlayNext = document.querySelector("#whoIsNext");
+            if (numberOfclick % 2 == 0) {
 
-            console.log("play")
-
+                whoIsPlayNext.innerHTML = " next play x " ;
+            
+            }
+            else {
+                whoIsPlayNext.innerHTML = " next play o ";
+                
+            }
         }
     
 }
