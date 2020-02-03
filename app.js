@@ -49,7 +49,7 @@ const myCallback0 = function () {
     const scr = selectXorO(0);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     img.setAttribute("class", "imgGame0");
     const newImg = document.querySelector("#number0");
     newImg.append(img);
@@ -64,7 +64,7 @@ const myCallback1 = function () {
     const scr = selectXorO(1);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     img.setAttribute("class", "imgGame1");
     const newImg = document.querySelector("#number1");
     newImg.append(img);
@@ -79,7 +79,7 @@ const myCallback2 = function () {
     const scr = selectXorO(2);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     img.setAttribute("class", "imgGame2");
     const newImg = document.querySelector("#number2");
     newImg.append(img);
@@ -94,7 +94,7 @@ const myCallback3 = function () {
     const scr = selectXorO(3);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     img.setAttribute("class", "imgGame3");
     const newImg = document.querySelector("#number3");
     newImg.append(img);
@@ -108,7 +108,7 @@ const myCallback4 = function () {
     const scr = selectXorO(4);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     img.setAttribute("class", "imgGame4");
     const newImg = document.querySelector("#number4");
     newImg.append(img);
@@ -122,7 +122,7 @@ const myCallback5 = function () {
     const scr = selectXorO(5);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     img.setAttribute("class", "imgGame5");
     const newImg = document.querySelector("#number5");
     newImg.append(img);
@@ -137,7 +137,7 @@ const myCallback6 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("class", "imgGame6");
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     const newImg = document.querySelector("#number6");
     newImg.append(img);
     number6.removeEventListener(eventType, myCallback6)
@@ -151,7 +151,7 @@ const myCallback7 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("class", "imgGame7");
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     const newImg = document.querySelector("#number7");
     newImg.append(img);
     number7.removeEventListener(eventType, myCallback7)
@@ -165,7 +165,7 @@ const myCallback8 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("class", "imgGame8");
-    img.setAttribute("width", "200");
+    img.setAttribute("width", "150");
     const newImg = document.querySelector("#number8");
     newImg.append(img);
     number8.removeEventListener(eventType, myCallback8)
@@ -288,7 +288,7 @@ const MessageTie = function () {
     const lastElement = unorderList.length;
 
     theWin = document.querySelector("#whoIsNext");
-    theWin.innerHTML = "   tie   ";
+    theWin.innerHTML = " tie   ";
 
 
     // change the img to play again img 
@@ -384,7 +384,7 @@ const playAgain = function () {
     numberOfclick = 0;
 
     removeTheword = document.querySelector("#whoIsNext");
-    removeTheword.innerHTML = " Tic Tac Toe ";
+    removeTheword.innerHTML = " Tic,Tac,Toe";
 
 
     xCont = document.querySelector("#xCount");
@@ -431,15 +431,7 @@ const removeAllEvent = function (){
     number6.removeEventListener(eventType, myCallback6);
     number7.removeEventListener(eventType, myCallback7);
     number8.removeEventListener(eventType, myCallback8);
-
-
-
-
-
 }
-
-
-
 
 const play = function () {
     myPlay();
@@ -452,11 +444,6 @@ const play = function () {
     number6.addEventListener(eventType, myCallback6);
     number7.addEventListener(eventType, myCallback7);
     number8.addEventListener(eventType, myCallback8);
-
-
 }
-
-
-
 
 startgame.addEventListener(eventType, play);

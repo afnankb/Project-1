@@ -1,16 +1,11 @@
-#xCount{
 
-
-padding-left: 2px;
-
-
-}
 .conterOfWin{
 
      display: flex;
-    justify-content:space-around; 
+     flex-direction: row;
+    justify-content: space-around;
     font-style: italic;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     
     
 
@@ -21,7 +16,7 @@ padding-left: 2px;
      display: flex;
     justify-content:space-around; 
     font-style: italic;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     
 
 }
@@ -33,9 +28,7 @@ padding-left: 2px;
 
     display: flex;
     justify-content:center;
-    
-
-
+    padding-top: 10px;
 }
 
 
@@ -44,7 +37,7 @@ padding-left: 2px;
     display: flex;
     justify-content:center;
     font-style: italic;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 
 
 }
@@ -88,8 +81,8 @@ justify-content:center;
 
 #number0 {
 
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
 
@@ -100,8 +93,8 @@ justify-content:center;
  #number1 
  {
 
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
     border-left: 2px solid black;
@@ -114,8 +107,8 @@ justify-content:center;
 
     border-bottom: 2px solid black;
     border-left: 2px solid black;
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
 
 }
 
@@ -123,8 +116,8 @@ justify-content:center;
 
 #number3 {
 
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
@@ -135,8 +128,8 @@ justify-content:center;
 
 #number4 {
 
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
@@ -156,8 +149,8 @@ justify-content:center;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
 
 }
 
@@ -165,8 +158,8 @@ justify-content:center;
 
     border-top: 2px solid black;
     border-right: 2px solid black;
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
 
 }
 
@@ -177,8 +170,8 @@ justify-content:center;
     border-top: 2px solid black;
     border-right: 2px solid black;
     border-left: 2px solid black;
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
 
 
  }
@@ -187,8 +180,8 @@ justify-content:center;
 
     border-top: 2px solid black;
     border-left: 2px solid black;
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
 
 }
 
@@ -230,8 +223,25 @@ justify-content:center;
 
     }
 
+    #start{
+
+         width: 200px;
+
+    }
+
     
   }
+
+
+
+  @font-face {
+    font-family: "ARCADECLASSIC";
+    src: url("pizzadudedotdk.txt");
+    src: 
+    url("pizzadudedotdk.txt") format("woff"),
+    url("pizzadudedotdk.txt") format("opentype"),
+    url("pizzadudedotdk.txt") format("svg");
+    }
 
 
 
