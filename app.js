@@ -402,17 +402,36 @@ const playAgain = function () {
 
 
     xCont = document.querySelector("#xCount");
-    xCont.innerHTML = winXCounter;
+
+    if(winXCounter === 0){
+        xCont.innerHTML = "zero";
+    
+        }
+        else{
+            xCont.innerHTML = winXCounter;
+    }
+  
 
     oCont = document.querySelector("#TieCount");
-    oCont.innerHTML = winOCounter;
+
+    if(winOCounter === 0){
+        oCont.innerHTML = "zero";
+    
+        }
+        else{
+            oCont.innerHTML = winOCounter;
+    }
+    
+    
 
     tCont = document.querySelector("#OCount");
+    if(tieCounter === 0){
+    tCont.innerHTML = "zero";
+
+    }
+    else{
     tCont.innerHTML = tieCounter;
-
-
-
-
+}
 
 
 }
@@ -421,7 +440,7 @@ const playAgain = function () {
 
 
 const play = function () {
-
+    myPlay();
     number0.addEventListener(eventType, myCallback0);
     number1.addEventListener(eventType, myCallback1);
     number2.addEventListener(eventType, myCallback2);
