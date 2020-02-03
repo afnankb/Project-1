@@ -3,10 +3,11 @@ const eventType = 'click';
 // create number of click to know who is click first player or second 
 let numberOfclick = 0;
 // create list to add if it's X or o 
-const XOrOList = [];
+const XOrOList =  [];
 let conterList = 0;
 //create list to add element un orderd
 const unorderList = [];
+
 // create query selector for all element 
 const number0 = document.querySelector('#number0');
 const number1 = document.querySelector('#number1');
@@ -186,60 +187,63 @@ const winORLose = function () {
         number1.setAttribute("class", "shake")
         number2.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
         number3.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
     } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
         number6.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
     } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
         number0.setAttribute("class", "shake")
         number3.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
     } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
         number1.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
+
+
+
 
     } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
         number2.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
     } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
         number0.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
     } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
         number2.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
         // if the number of click equal to 9 so no one win 
     } else if (numberOfclick === 9) {
         setTimeout("MessageTie()", 500);
-        setTimeout("playAgain()",600);
+        setTimeout("playAgain()",3000);
 
         // to know who is next 
 
@@ -266,10 +270,6 @@ const MessageWin = function () {
     theWin = document.querySelector("#whoIsNext");
     theWin.innerHTML = " the winner is " + unorderList[lastElement - 1];
 
-
-
-   
-    
 }
 
 
@@ -281,8 +281,6 @@ const MessageTie = function () {
 
     theWin = document.querySelector("#whoIsNext");
     theWin.innerHTML = "   tie   ";
-
-
 
 }
 
@@ -311,16 +309,17 @@ const selectXorO = function (index) {
 }
 
 
-// const playAgain = function () {
-
-//     play();
+const playAgain = function () {
     
-//     const XOrOList = [];
-//     const unorderList = [];
-//     conterList = 0;
-//     numberOfclick=0;
+    document.location.reload();
+    // play();
+   
+    // const XOrOList = [];
+    // const unorderList = [];
+    // conterList = 0;
+    // numberOfclick = 0;
 
-// }
+}
 
 
 
