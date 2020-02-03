@@ -28,7 +28,6 @@ const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 const startgame = document.querySelector("#start");
 
-
 // funcition to play the sound when user click 
 function myPlay() {
     var audio = new Audio("Click.mp3");
@@ -74,7 +73,6 @@ const myCallback1 = function () {
 
 }
 
-
 const myCallback2 = function () {
     myPlay();
     const img = document.createElement("img");
@@ -90,7 +88,6 @@ const myCallback2 = function () {
 
 }
 
-
 const myCallback3 = function () {
     myPlay();
     const img = document.createElement("img");
@@ -103,7 +100,6 @@ const myCallback3 = function () {
     newImg.append(img);
     number3.removeEventListener(eventType, myCallback3)
     winORLose();
-
 }
 
 const myCallback4 = function () {
@@ -118,7 +114,6 @@ const myCallback4 = function () {
     newImg.append(img);
     number4.removeEventListener(eventType, myCallback4)
     winORLose();
-
 }
 
 const myCallback5 = function () {
@@ -133,7 +128,6 @@ const myCallback5 = function () {
     newImg.append(img);
     number5.removeEventListener(eventType, myCallback5)
     winORLose();
-
 }
 
 const myCallback6 = function () {
@@ -148,7 +142,6 @@ const myCallback6 = function () {
     newImg.append(img);
     number6.removeEventListener(eventType, myCallback6)
     winORLose();
-
 }
 
 const myCallback7 = function () {
@@ -163,7 +156,6 @@ const myCallback7 = function () {
     newImg.append(img);
     number7.removeEventListener(eventType, myCallback7)
     winORLose();
-
 }
 
 const myCallback8 = function () {
@@ -178,8 +170,6 @@ const myCallback8 = function () {
     newImg.append(img);
     number8.removeEventListener(eventType, myCallback8)
     winORLose();
-
-
 }
 
 // Funcition win or lose 
@@ -190,76 +180,72 @@ const myCallback8 = function () {
 
 const winORLose = function () {
 
-
     if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
         number0.setAttribute("class", "shake")
         number1.setAttribute("class", "shake")
         number2.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
         number3.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
         number6.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
         number0.setAttribute("class", "shake")
         number3.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
         number1.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
         number2.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
         number0.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
-
 
     } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
         number2.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
+        removeAllEvent();
         setTimeout("MessageWin()", 500);
 
         // if the number of click equal to 9 so no one win 
     } else if (numberOfclick === 9) {
 
         setTimeout("MessageTie()", 500);
-
-
-
         // to know who is next 
 
     } else {
 
         whoIsPlayNext = document.querySelector("#whoIsNext");
         if (numberOfclick % 2 == 0) {
-
             whoIsPlayNext.innerHTML = " next play x ";
 
         } else {
@@ -286,7 +272,7 @@ const MessageWin = function () {
         winOCounter++;
     }
 
-   // change the img to play again img 
+    // change the img to play again img 
     startgame.setAttribute("src", "play-again.png");
 
     startgame.addEventListener(eventType, playAgain);
@@ -297,7 +283,7 @@ const MessageWin = function () {
 
 
 //  massege to tell the users you are tie 
-  const MessageTie = function () {
+const MessageTie = function () {
     tieCounter++;
     const lastElement = unorderList.length;
 
@@ -305,7 +291,7 @@ const MessageWin = function () {
     theWin.innerHTML = "   tie   ";
 
 
-// change the img to play again img 
+    // change the img to play again img 
     startgame.setAttribute("src", "play-again.png");
     startgame.addEventListener(eventType, playAgain);
 
@@ -403,35 +389,51 @@ const playAgain = function () {
 
     xCont = document.querySelector("#xCount");
 
-    if(winXCounter === 0){
+    if (winXCounter === 0) {
         xCont.innerHTML = "zero";
-    
-        }
-        else{
-            xCont.innerHTML = winXCounter;
+
+    } else {
+        xCont.innerHTML = winXCounter;
     }
-  
+
 
     oCont = document.querySelector("#TieCount");
 
-    if(winOCounter === 0){
+    if (winOCounter === 0) {
         oCont.innerHTML = "zero";
-    
-        }
-        else{
-            oCont.innerHTML = winOCounter;
+
+    } else {
+        oCont.innerHTML = winOCounter;
     }
-    
-    
+
+
 
     tCont = document.querySelector("#OCount");
-    if(tieCounter === 0){
-    tCont.innerHTML = "zero";
+    if (tieCounter === 0) {
+        tCont.innerHTML = "zero";
 
+    } else {
+        tCont.innerHTML = tieCounter;
     }
-    else{
-    tCont.innerHTML = tieCounter;
+
+
 }
+
+
+const removeAllEvent = function (){
+
+    number0.removeEventListener(eventType, myCallback0);
+    number1.removeEventListener(eventType, myCallback1);
+    number2.removeEventListener(eventType, myCallback2);
+    number3.removeEventListener(eventType, myCallback3);
+    number4.removeEventListener(eventType, myCallback4);
+    number5.removeEventListener(eventType, myCallback5);
+    number6.removeEventListener(eventType, myCallback6);
+    number7.removeEventListener(eventType, myCallback7);
+    number8.removeEventListener(eventType, myCallback8);
+
+
+
 
 
 }
@@ -453,5 +455,8 @@ const play = function () {
 
 
 }
+
+
+
 
 startgame.addEventListener(eventType, play);
