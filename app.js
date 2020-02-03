@@ -13,9 +13,9 @@ const unorderList = [];
 //conter to know who many times x win
 let winXCounter = 0;
 //conter to know who many times o win
-let winOCounter = 0 ;
+let winOCounter = 0;
 // conter to know who many times tie 
-let tieCounter = 0 ;
+let tieCounter = 0;
 // create query selector for all element 
 const number0 = document.querySelector('#number0');
 const number1 = document.querySelector('#number1');
@@ -27,6 +27,7 @@ const number6 = document.querySelector('#number6');
 const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 const startgame = document.querySelector("#start");
+
 
 // funcition to play the sound when user click 
 function myPlay() {
@@ -195,37 +196,34 @@ const winORLose = function () {
         number1.setAttribute("class", "shake")
         number2.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
 
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
         number3.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
 
     } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
         number6.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
 
     } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
         number0.setAttribute("class", "shake")
         number3.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
 
     } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
         number1.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
-
-
 
 
     } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
@@ -233,27 +231,27 @@ const winORLose = function () {
         number5.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
 
     } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
         number0.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
 
     } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
         number2.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()", 1500);
+
         // if the number of click equal to 9 so no one win 
     } else if (numberOfclick === 9) {
-        tieCounter++;
+
         setTimeout("MessageTie()", 500);
-        setTimeout("playAgain()", 1500);
-        
+
+
 
         // to know who is next 
 
@@ -280,24 +278,36 @@ const MessageWin = function () {
     theWin = document.querySelector("#whoIsNext");
     theWin.innerHTML = " the winner is " + unorderList[lastElement - 1];
 
-     if (unorderList[lastElement - 1]=== "x"){
+    if (unorderList[lastElement - 1] === "x") {
+        // increse the winner counter for x 
         winXCounter++;
-     }
-     else{
+    } else {
+        // increse the winner counter for o
         winOCounter++;
-     }
+    }
+
+   // change the img to play again img 
+    startgame.setAttribute("src", "play-again.png");
+
+    startgame.addEventListener(eventType, playAgain);
+
 
 }
 
 
 
 //  massege to tell the users you are tie 
-const MessageTie = function () {
-
+  const MessageTie = function () {
+    tieCounter++;
     const lastElement = unorderList.length;
 
     theWin = document.querySelector("#whoIsNext");
     theWin.innerHTML = "   tie   ";
+
+
+// change the img to play again img 
+    startgame.setAttribute("src", "play-again.png");
+    startgame.addEventListener(eventType, playAgain);
 
 }
 
@@ -328,75 +338,81 @@ const selectXorO = function (index) {
 }
 
 
+
+
+
+// funcition to empty alll imformation to play again 
 const playAgain = function () {
 
-    //document.location.reload();
+
     play();
 
     for (let i = 0; i <= indexList.length; i++) {
-        if(indexList[i] === 0){
+        if (indexList[i] === 0) {
             const image0 = document.querySelector(".imgGame0");
-            image0.setAttribute("src", "")
+            image0.remove();
             number0.setAttribute("class", "");
-        
-        }
-            
-            else if(indexList[i] === 1){
+
+        } else if (indexList[i] === 1) {
             const image1 = document.querySelector(".imgGame1");
-            image1.setAttribute("src", "")
-            number1.setAttribute("class", "");}
-            
-            else if(indexList[i] === 2){
+            image1.remove();
+            number1.setAttribute("class", "");
+        } else if (indexList[i] === 2) {
             const image2 = document.querySelector(".imgGame2");
-            image2.setAttribute("src", "")
-            number2.setAttribute("class", "");}
-            
-            else if(indexList[i] === 3){
-            
+            image2.remove();
+            number2.setAttribute("class", "");
+        } else if (indexList[i] === 3) {
+
             const image3 = document.querySelector(".imgGame3");
-            image3.setAttribute("src", "")
-            number3.setAttribute("class", "");}
-            
-            else if(indexList[i] === 4){
+            image3.remove();
+            number3.setAttribute("class", "");
+        } else if (indexList[i] === 4) {
             const image4 = document.querySelector(".imgGame4");
-            image4.setAttribute("src", "")
-            number4.setAttribute("class", "");}
-            
-            else if(indexList[i] === 5){
+            image4.remove();
+            number4.setAttribute("class", "");
+        } else if (indexList[i] === 5) {
             const image5 = document.querySelector(".imgGame5");
-            image5.setAttribute("src", "")
-            number5.setAttribute("class", "");}
-            
-            else if(indexList[i] === 6){
+            image5.remove();
+            number5.setAttribute("class", "");
+        } else if (indexList[i] === 6) {
             const image6 = document.querySelector(".imgGame6");
-            image6.setAttribute("src", "")
-            number6.setAttribute("class", "");}
-            
-            else if(indexList[i] === 7){
+            image6.remove();
+            number6.setAttribute("class", "");
+        } else if (indexList[i] === 7) {
             const image7 = document.querySelector(".imgGame7");
-            image7.setAttribute("src", "")
-            number7.setAttribute("class", "");}
-            
-            else if(indexList[i] === 8){
+            image7.remove();
+            number7.setAttribute("class", "");
+        } else if (indexList[i] === 8) {
             const image8 = document.querySelector(".imgGame8");
-            image8.setAttribute("src", "")
-            number8.setAttribute("class", "");} 
+            image8.remove();
+            number8.setAttribute("class", "");
+        }
 
 
     }
 
     XOrOList.length = 0;
-    unorderList.length = 0 ;
-    indexList.length = 0 ;
+    unorderList.length = 0;
+    indexList.length = 0;
     conterList = 0;
     numberOfclick = 0;
 
     removeTheword = document.querySelector("#whoIsNext");
     removeTheword.innerHTML = " Tic Tac Toe ";
 
-     console.log("x"+winXCounter);
-     console.log("o"+winOCounter);
-     console.log("t"+tieCounter);
+
+    xCont = document.querySelector("#xCount");
+    xCont.innerHTML = winXCounter;
+
+    oCont = document.querySelector("#TieCount");
+    oCont.innerHTML = winOCounter;
+
+    tCont = document.querySelector("#OCount");
+    tCont.innerHTML = tieCounter;
+
+
+
+
 
 
 }
@@ -415,7 +431,7 @@ const play = function () {
     number6.addEventListener(eventType, myCallback6);
     number7.addEventListener(eventType, myCallback7);
     number8.addEventListener(eventType, myCallback8);
-    
+
 
 }
 
