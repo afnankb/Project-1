@@ -3,11 +3,19 @@ const eventType = 'click';
 // create number of click to know who is click first player or second 
 let numberOfclick = 0;
 // create list to add if it's X or o 
-const XOrOList =  [];
+const XOrOList = [];
 let conterList = 0;
-//create list to add element un orderd
+//create list of index
+const indexList = [];
+let conterIndexList = 0;
+//create list to add element un orderd to know last elemen 
 const unorderList = [];
-
+//conter to know who many times x win
+let winXCounter = 0;
+//conter to know who many times o win
+let winOCounter = 0 ;
+// conter to know who many times tie 
+let tieCounter = 0 ;
 // create query selector for all element 
 const number0 = document.querySelector('#number0');
 const number1 = document.querySelector('#number1');
@@ -42,7 +50,7 @@ const myCallback0 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame0");
     const newImg = document.querySelector("#number0");
     newImg.append(img);
     number0.removeEventListener(eventType, myCallback0)
@@ -57,7 +65,7 @@ const myCallback1 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame1");
     const newImg = document.querySelector("#number1");
     newImg.append(img);
     newImg.removeEventListener(eventType, myCallback1)
@@ -73,7 +81,7 @@ const myCallback2 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame2");
     const newImg = document.querySelector("#number2");
     newImg.append(img);
     number2.removeEventListener(eventType, myCallback2)
@@ -89,7 +97,7 @@ const myCallback3 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame3");
     const newImg = document.querySelector("#number3");
     newImg.append(img);
     number3.removeEventListener(eventType, myCallback3)
@@ -104,7 +112,7 @@ const myCallback4 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame4");
     const newImg = document.querySelector("#number4");
     newImg.append(img);
     number4.removeEventListener(eventType, myCallback4)
@@ -119,7 +127,7 @@ const myCallback5 = function () {
     numberOfclick++;
     img.setAttribute("src", scr);
     img.setAttribute("width", "200");
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame5");
     const newImg = document.querySelector("#number5");
     newImg.append(img);
     number5.removeEventListener(eventType, myCallback5)
@@ -133,7 +141,7 @@ const myCallback6 = function () {
     const scr = selectXorO(6);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame6");
     img.setAttribute("width", "200");
     const newImg = document.querySelector("#number6");
     newImg.append(img);
@@ -148,7 +156,7 @@ const myCallback7 = function () {
     const scr = selectXorO(7);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame7");
     img.setAttribute("width", "200");
     const newImg = document.querySelector("#number7");
     newImg.append(img);
@@ -163,7 +171,7 @@ const myCallback8 = function () {
     const scr = selectXorO(8);
     numberOfclick++;
     img.setAttribute("src", scr);
-    img.setAttribute("class", "imgGame");
+    img.setAttribute("class", "imgGame8");
     img.setAttribute("width", "200");
     const newImg = document.querySelector("#number8");
     newImg.append(img);
@@ -187,35 +195,35 @@ const winORLose = function () {
         number1.setAttribute("class", "shake")
         number2.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
         number3.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
     } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
         number6.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
     } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
         number0.setAttribute("class", "shake")
         number3.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
     } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
         number1.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
 
 
@@ -225,25 +233,27 @@ const winORLose = function () {
         number5.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
     } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
         number0.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
 
     } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
         number2.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         setTimeout("MessageWin()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
         // if the number of click equal to 9 so no one win 
     } else if (numberOfclick === 9) {
+        tieCounter++;
         setTimeout("MessageTie()", 500);
-        setTimeout("playAgain()",3000);
+        setTimeout("playAgain()", 1500);
+        
 
         // to know who is next 
 
@@ -270,6 +280,13 @@ const MessageWin = function () {
     theWin = document.querySelector("#whoIsNext");
     theWin.innerHTML = " the winner is " + unorderList[lastElement - 1];
 
+     if (unorderList[lastElement - 1]=== "x"){
+        winXCounter++;
+     }
+     else{
+        winOCounter++;
+     }
+
 }
 
 
@@ -294,6 +311,7 @@ const selectXorO = function (index) {
         // add it to the list 
         XOrOList[index] = "x";
         unorderList[conterList++] = "x";
+        indexList[conterIndexList++] = index;
         return ("x.png")
 
     }
@@ -301,6 +319,7 @@ const selectXorO = function (index) {
     else {
         XOrOList[index] = "o";
         unorderList[conterList++] = "o";
+        indexList[conterIndexList++] = index;
         return ("o.png")
 
 
@@ -310,14 +329,75 @@ const selectXorO = function (index) {
 
 
 const playAgain = function () {
-    
-    document.location.reload();
-    // play();
-   
-    // const XOrOList = [];
-    // const unorderList = [];
-    // conterList = 0;
-    // numberOfclick = 0;
+
+    //document.location.reload();
+    play();
+
+    for (let i = 0; i <= indexList.length; i++) {
+        if(indexList[i] === 0){
+            const image0 = document.querySelector(".imgGame0");
+            image0.setAttribute("src", "")
+            number0.setAttribute("class", "");
+        
+        }
+            
+            else if(indexList[i] === 1){
+            const image1 = document.querySelector(".imgGame1");
+            image1.setAttribute("src", "")
+            number1.setAttribute("class", "");}
+            
+            else if(indexList[i] === 2){
+            const image2 = document.querySelector(".imgGame2");
+            image2.setAttribute("src", "")
+            number2.setAttribute("class", "");}
+            
+            else if(indexList[i] === 3){
+            
+            const image3 = document.querySelector(".imgGame3");
+            image3.setAttribute("src", "")
+            number3.setAttribute("class", "");}
+            
+            else if(indexList[i] === 4){
+            const image4 = document.querySelector(".imgGame4");
+            image4.setAttribute("src", "")
+            number4.setAttribute("class", "");}
+            
+            else if(indexList[i] === 5){
+            const image5 = document.querySelector(".imgGame5");
+            image5.setAttribute("src", "")
+            number5.setAttribute("class", "");}
+            
+            else if(indexList[i] === 6){
+            const image6 = document.querySelector(".imgGame6");
+            image6.setAttribute("src", "")
+            number6.setAttribute("class", "");}
+            
+            else if(indexList[i] === 7){
+            const image7 = document.querySelector(".imgGame7");
+            image7.setAttribute("src", "")
+            number7.setAttribute("class", "");}
+            
+            else if(indexList[i] === 8){
+            const image8 = document.querySelector(".imgGame8");
+            image8.setAttribute("src", "")
+            number8.setAttribute("class", "");} 
+
+
+    }
+
+    XOrOList.length = 0;
+    unorderList.length = 0 ;
+    indexList.length = 0 ;
+    conterList = 0;
+    numberOfclick = 0;
+
+    removeTheword = document.querySelector("#whoIsNext");
+    removeTheword.innerHTML = " Tic Tac Toe ";
+
+     console.log("x"+winXCounter);
+     console.log("o"+winOCounter);
+     console.log("t"+tieCounter);
+
 
 }
 
@@ -335,7 +415,7 @@ const play = function () {
     number6.addEventListener(eventType, myCallback6);
     number7.addEventListener(eventType, myCallback7);
     number8.addEventListener(eventType, myCallback8);
-    console.log("work")
+    
 
 }
 
