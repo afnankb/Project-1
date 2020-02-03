@@ -1,24 +1,55 @@
 
-.conterOfWin{
+.win{
 
-     display: flex;
-     flex-direction: row;
-    justify-content: space-around;
-    font-style: italic;
-    font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    
-    
+    padding: 2px;
+    margin: 20px;
 
 }
 
-.conterOfWin2{
 
-     display: flex;
-    justify-content:space-around; 
+.wincount{
+
+    padding: 2px;
+    margin: 35px;
+
+
+}
+
+#oneplayer{
+    padding: 2px;
+    margin: 20px;
+    border : 2px dashed black;
+}
+
+#twoplayer{
+    padding: 2px;
+    margin: 20px;
+    border : 2px dashed black;
+}
+
+
+.theHeder {
+    display: flex;
+    justify-content: center;
+    font-family: "ARCADECLASSIC", 'Lucida Sans Regular';
+
+
+}
+
+.conterOfWin {
+
+    display: flex;
+    justify-content: center;
     font-style: italic;
     font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-    
+}
 
+.conterOfWin2 {
+
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 
@@ -27,19 +58,23 @@
 .start-game {
 
     display: flex;
-    justify-content:center;
+    justify-content: center;
     padding-top: 10px;
 }
 
+#start{
 
-#whoIsNext{
+    border : 2px dashed black;
+
+}
+
+
+#whoIsNext {
 
     display: flex;
-    justify-content:center;
+    justify-content: center;
     font-style: italic;
     font-family: "ARCADECLASSIC", 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-
-
 }
 
 
@@ -47,30 +82,30 @@
 .contener1 {
 
 
-   margin-top: 50px;
+    margin-top: 50px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
 
 }
 
 
 
 
-.contener2{
+.contener2 {
 
-   
+
     display: flex;
-    justify-content:center;
+    justify-content: center;
 
 }
 
 
- .contener3 {
+.contener3 {
 
 
 
-display: flex;
-justify-content:center;
+    display: flex;
+    justify-content: center;
 
 
 }
@@ -90,8 +125,7 @@ justify-content:center;
 
 
 
- #number1 
- {
+#number1 {
 
     width: 200px;
     height: 150px;
@@ -100,9 +134,9 @@ justify-content:center;
     border-left: 2px solid black;
 
 
- }
- 
- #number2 {
+}
+
+#number2 {
 
 
     border-bottom: 2px solid black;
@@ -164,9 +198,8 @@ justify-content:center;
 }
 
 
- #number7 
- {
-    
+#number7 {
+
     border-top: 2px solid black;
     border-right: 2px solid black;
     border-left: 2px solid black;
@@ -174,9 +207,9 @@ justify-content:center;
     height: 150px;
 
 
- }
- 
- #number8 {
+}
+
+#number8 {
 
     border-top: 2px solid black;
     border-left: 2px solid black;
@@ -189,61 +222,102 @@ justify-content:center;
 
 .shake {
     /* Start the shake animation and make the animation last for 0.5 seconds */
-    animation: shake 0.5s; 
-  
+    animation: shake 0.5s;
+
     /* When the animation is finished, start again */
-    animation-iteration-count: infinite; 
-  }
-  
-  @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    animation-iteration-count: infinite;
+}
 
-  }
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+}
 
 
-  @media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
     img {
 
-       width: 100px;
-       height: 100px;
+        width: 100px;
+        height: 100px;
     }
-    #number0,#number1,#number2,#number3,#number4,#number5,#number6
-    ,#number7,#number8{
+
+    #number0,
+    #number1,
+    #number2,
+    #number3,
+    #number4,
+    #number5,
+    #number6,
+    #number7,
+    #number8 {
 
         width: 100px;
         height: 100px;
 
     }
 
-    #start{
+    #start {
 
-         width: 200px;
+        width: 200px;
 
     }
+.win h2{
 
-    
-  }
+    font-size: 20px;
+    margin: 5px;
+
+
+}
+
+.wincount{
+    font-size: 20px;
+    margin: 5px;
+
+}
+
+}
 
 
 
-  @font-face {
+@font-face {
     font-family: "ARCADECLASSIC";
     src: url("pizzadudedotdk.txt");
-    src: 
-    url("pizzadudedotdk.txt") format("woff"),
-    url("pizzadudedotdk.txt") format("opentype"),
-    url("pizzadudedotdk.txt") format("svg");
-    }
-
-
-
-  
-
+    src:
+        url("pizzadudedotdk.txt") format("woff"),
+        url("pizzadudedotdk.txt") format("opentype"),
+        url("pizzadudedotdk.txt") format("svg");
+}
