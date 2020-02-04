@@ -44,6 +44,7 @@ function myPlay() {
 // click back if player click one player 
 
 const callBackOnePlayer = function () {
+
     twoplayer.setAttribute("id", "none")
     startgame.addEventListener(eventType, play);
     myPlay();
@@ -58,7 +59,7 @@ const callBackOnePlayer = function () {
 const callBackTwoPlayer = function () {
 
     oneplayer.setAttribute("id", "none")
-   startgame.addEventListener(eventType, play);
+    startgame.addEventListener(eventType, play);
     myPlay();
     oneplayer.removeEventListener(eventType, callBackOnePlayer)
 
@@ -469,10 +470,9 @@ const playWithComputer = function () {
     if (PLayAginForComputer === "t") {
         if ((oneplayerState === true) && (numberOfclick % 2 !== 0)) {
             const randomNumber = Math.floor(Math.random() * 8);
-
             const IsAvalible = checkAvalibility(randomNumber);
             if (IsAvalible === false && numberOfclick <= 8) {
-                // start the funcition again 
+                //start the funcition again 
                 playWithComputer();
 
             } else if (randomNumber === 0 && IsAvalible === true) {
@@ -495,9 +495,11 @@ const playWithComputer = function () {
                 myCallback8();
             }
 
-        } //iF
+       } //iF   
     }
 }
+
+
 
 // check if this element null or full 
 const checkAvalibility = function (index) {
@@ -536,6 +538,7 @@ const removeAllEvent = function () {
     PLayAginForComputer = false;
 }
 //start game 
+
 const play = function () {
     myPlay();
     number0.addEventListener(eventType, myCallback0);
