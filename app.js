@@ -1,6 +1,6 @@
 // create event 
 const eventType = 'click';
-// create number of click to know who is click first player or second 
+// create number of click to know who is click first player or second and as a conter of clickes
 let numberOfclick = 0;
 // create list to add if it's X or o 
 const XOrOList = [];
@@ -8,14 +8,17 @@ let conterList = 0;
 //create list of index
 const indexList = [];
 let conterIndexList = 0;
-//create list to add element un orderd to know last elemen 
+//create list to add element un orderd to know last element 
 const unorderList = [];
-//conter to know who many times x win
+//conter to know who win many times x or o
 let winXCounter = 0;
-//conter to know who many times o win
+//conter to know who win many times o or x 
 let winOCounter = 0;
-// conter to know who many times tie 
+// conter to know who many times  of tie 
 let tieCounter = 0;
+// Boolean  to know if select one player or two 
+let oneplayerState = false;
+let PLayAginForComputer = 'f';
 // create query selector for all element 
 const number0 = document.querySelector('#number0');
 const number1 = document.querySelector('#number1');
@@ -27,12 +30,41 @@ const number6 = document.querySelector('#number6');
 const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 const startgame = document.querySelector("#start");
+const oneplayer = document.querySelector("#oneplayer");
+const twoplayer = document.querySelector("#twoplayer");
+
 
 // funcition to play the sound when user click 
 function myPlay() {
     var audio = new Audio("Click.mp3");
     audio.play();
 }
+
+
+// click back if player click one player 
+
+const callBackOnePlayer = function () {
+    twoplayer.setAttribute("id", "none")
+    startgame.addEventListener(eventType, play);
+    myPlay();
+    oneplayerState = true;
+    PLayAginForComputer = "t";
+    const playerTwoConterName = document.querySelector("#player2");
+    playerTwoConterName.innerHTML = "O (computer)";
+    twoplayer.removeEventListener(eventType, callBackTwoPlayer)
+
+}
+// click back if player click two player 
+const callBackTwoPlayer = function () {
+
+    oneplayer.setAttribute("id", "none")
+   startgame.addEventListener(eventType, play);
+    myPlay();
+    oneplayer.removeEventListener(eventType, callBackOnePlayer)
+
+
+}
+
 
 // create funcitons to click back if the user click
 // 1. create img element 
@@ -55,6 +87,7 @@ const myCallback0 = function () {
     newImg.append(img);
     number0.removeEventListener(eventType, myCallback0)
     winORLose();
+    playWithComputer();
 
 }
 
@@ -70,7 +103,7 @@ const myCallback1 = function () {
     newImg.append(img);
     newImg.removeEventListener(eventType, myCallback1)
     winORLose();
-
+    setTimeout("playWithComputer()", 800);
 }
 
 const myCallback2 = function () {
@@ -85,6 +118,7 @@ const myCallback2 = function () {
     newImg.append(img);
     number2.removeEventListener(eventType, myCallback2)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 
 }
 
@@ -100,6 +134,7 @@ const myCallback3 = function () {
     newImg.append(img);
     number3.removeEventListener(eventType, myCallback3)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 }
 
 const myCallback4 = function () {
@@ -114,6 +149,7 @@ const myCallback4 = function () {
     newImg.append(img);
     number4.removeEventListener(eventType, myCallback4)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 }
 
 const myCallback5 = function () {
@@ -128,6 +164,7 @@ const myCallback5 = function () {
     newImg.append(img);
     number5.removeEventListener(eventType, myCallback5)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 }
 
 const myCallback6 = function () {
@@ -142,6 +179,7 @@ const myCallback6 = function () {
     newImg.append(img);
     number6.removeEventListener(eventType, myCallback6)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 }
 
 const myCallback7 = function () {
@@ -156,6 +194,7 @@ const myCallback7 = function () {
     newImg.append(img);
     number7.removeEventListener(eventType, myCallback7)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 }
 
 const myCallback8 = function () {
@@ -170,6 +209,7 @@ const myCallback8 = function () {
     newImg.append(img);
     number8.removeEventListener(eventType, myCallback8)
     winORLose();
+    setTimeout("playWithComputer()", 800);
 }
 
 // Funcition win or lose 
@@ -303,6 +343,8 @@ const MessageTie = function () {
 const selectXorO = function (index) {
     // x
     const lastElement = unorderList.length;
+
+
     if (numberOfclick % 2 == 0) {
         // add it to the list 
         XOrOList[index] = "x";
@@ -311,6 +353,7 @@ const selectXorO = function (index) {
         return ("x.png")
 
     }
+
     // O
     else {
         XOrOList[index] = "o";
@@ -327,8 +370,9 @@ const selectXorO = function (index) {
 
 
 
-// funcition to empty alll imformation to play again 
+// funcition to empty all imformation to play again 
 const playAgain = function () {
+    PLayAginForComputer = "t";
 
 
     play();
@@ -376,17 +420,18 @@ const playAgain = function () {
 
 
     }
-
+    // all list to null and conter to zero ß
     XOrOList.length = 0;
     unorderList.length = 0;
     indexList.length = 0;
     conterList = 0;
     numberOfclick = 0;
 
+
     removeTheword = document.querySelector("#whoIsNext");
     removeTheword.innerHTML = " Tic,Tac,Toe";
 
-
+    // explore the count number in page 
     xCont = document.querySelector("#xCount");
 
     if (winXCounter === 0) {
@@ -419,8 +464,65 @@ const playAgain = function () {
 
 }
 
+// when user click one player 
+const playWithComputer = function () {
+    if (PLayAginForComputer === "t") {
+        if ((oneplayerState === true) && (numberOfclick % 2 !== 0)) {
+            const randomNumber = Math.floor(Math.random() * 8);
 
-const removeAllEvent = function (){
+            const IsAvalible = checkAvalibility(randomNumber);
+            if (IsAvalible === false && numberOfclick <= 8) {
+                // start the funcition again 
+                playWithComputer();
+
+            } else if (randomNumber === 0 && IsAvalible === true) {
+                myCallback0();
+            } else if (randomNumber === 1 && IsAvalible === true) {
+                myCallback1();
+            } else if (randomNumber === 2 && IsAvalible === true) {
+                myCallback2();
+            } else if (randomNumber === 3 && IsAvalible === true) {
+                myCallback3();
+            } else if (randomNumber === 4 && IsAvalible === true) {
+                myCallback4();
+            } else if (randomNumber === 5 && IsAvalible === true) {
+                myCallback5();
+            } else if (randomNumber === 6 && IsAvalible === true) {
+                myCallback6();
+            } else if (randomNumber === 7 && IsAvalible === true) {
+                myCallback7();
+            } else if (randomNumber === 8 && IsAvalible === true) {
+                myCallback8();
+            }
+
+        } //iF
+    }
+}
+
+// check if this element null or full 
+const checkAvalibility = function (index) {
+    let theReturn;
+    for (let i = 0; i <= XOrOList.length; i++) {
+
+        if ((XOrOList[index] === "x") || (XOrOList[index] === "o")) {
+
+            theReturn = false;
+
+        } else {
+
+            theReturn = true;
+        }
+
+
+    } //for
+
+    return theReturn;
+}
+
+
+
+// remove all event listner
+const removeAllEvent = function () {
 
     number0.removeEventListener(eventType, myCallback0);
     number1.removeEventListener(eventType, myCallback1);
@@ -431,8 +533,9 @@ const removeAllEvent = function (){
     number6.removeEventListener(eventType, myCallback6);
     number7.removeEventListener(eventType, myCallback7);
     number8.removeEventListener(eventType, myCallback8);
+    PLayAginForComputer = false;
 }
-
+//start game 
 const play = function () {
     myPlay();
     number0.addEventListener(eventType, myCallback0);
@@ -444,6 +547,9 @@ const play = function () {
     number6.addEventListener(eventType, myCallback6);
     number7.addEventListener(eventType, myCallback7);
     number8.addEventListener(eventType, myCallback8);
+
 }
 
-startgame.addEventListener(eventType, play);
+
+oneplayer.addEventListener(eventType, callBackOnePlayer);
+twoplayer.addEventListener(eventType, callBackTwoPlayer);

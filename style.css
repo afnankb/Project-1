@@ -1,5 +1,13 @@
+#none {
 
-.win{
+    padding: 10px;
+    margin: 20px;
+    border: 2px dashed white;
+
+
+}
+
+.win {
 
     padding: 2px;
     margin: 20px;
@@ -7,7 +15,7 @@
 }
 
 
-.wincount{
+.wincount {
 
     padding: 2px;
     margin: 35px;
@@ -15,16 +23,16 @@
 
 }
 
-#oneplayer{
-    padding: 2px;
+#oneplayer {
+    padding: 10px;
     margin: 20px;
-    border : 2px dashed black;
+    border: 2px dashed black;
 }
 
-#twoplayer{
-    padding: 2px;
+#twoplayer {
+    padding: 10px;
     margin: 20px;
-    border : 2px dashed black;
+    border: 2px dashed black;
 }
 
 
@@ -62,9 +70,9 @@
     padding-top: 10px;
 }
 
-#start{
+#start {
 
-    border : 2px dashed black;
+    border: 2px dashed black;
 
 }
 
@@ -82,7 +90,7 @@
 .contener1 {
 
 
-    margin-top: 50px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
 
@@ -103,7 +111,7 @@
 .contener3 {
 
 
-
+    margin-bottom: 25px;
     display: flex;
     justify-content: center;
 
@@ -295,19 +303,20 @@
         width: 200px;
 
     }
-.win h2{
 
-    font-size: 20px;
-    margin: 5px;
+    .win h2 {
+
+        font-size: 20px;
+        margin: 5px;
 
 
-}
+    }
 
-.wincount{
-    font-size: 20px;
-    margin: 5px;
+    .wincount {
+        font-size: 20px;
+        margin: 5px;
 
-}
+    }
 
 }
 
