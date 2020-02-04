@@ -45,13 +45,12 @@
 
 ### the winner funcition
 
-`
+```
 if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
         removeAllEvent();
        MessageWin();
-
     }
-    `
+   ```
 if the element of the same line (example) have the same value and not null , upload message win and remove all events listener to stop clicks in games .
 
 ## Usage
