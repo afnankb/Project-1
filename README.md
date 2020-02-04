@@ -2,18 +2,13 @@
 
 ## Descripition
 
-  The game is tic tac toe , you can select one player and play with computer or two players , you can play multiple game roundes and know how is win or tie .
+  The game is tic tac toe , you can select one player and play with computer or two players , you can play multiple game roundes and know who is win or tie .
   
-
 ## Technologies
 
 - html .
 - css .
 - java script .
-
-## wireframe
-
-<https://github.com/afnankb/Project-1/blob/master/wireframeGame.png)>
 
 ## user stories
 
@@ -30,8 +25,8 @@
 
 ## planning and development process
 
-  Start with html and css pages after that start java script page .
-  After link all pages togather start devolpment , First start if the game for two players ( play game , find the winner , count the number of winner times or tie  and if select play again the game will restart ) after that devlopment if select one player game ( play with computer )at same steps.
+  Start with html and css pages after that start in  java script page .
+  After link all pages togather start develpment , First start if the game for two players ( play game , find the winner , count the number of winner times or tie  and if select play again the game will restart ) after that devlopment if select one player game ( play with computer ) at same steps.
 
 ## Code Examples
 
@@ -48,4 +43,8 @@ if the element of the same line (example) have the same value and not null , upl
 
 ## Usage
 
-first select one player or two player ---> then click play game img to start the game ---> select any element and play ---> if you want to start again click at start again img .
+first select one player or two player ---> then click play game image to start the game ---> select any element and play ---> if you want to start again click at start again image .
+
+## wireframe
+
+![wireframe](wireframeGame.png)
