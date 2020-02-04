@@ -4,14 +4,6 @@
 
   The game is tic tac toe , you can select one player and play with computer or two players , you can play multiple game roundes and know how is win or tie .
   
-### Table of contents
-
-*[Descripition](#Descripition)
-*[Technologies](#Technologies)
-*[wireframe](#wireframe)
-*[user stories](#userstories)
-*[planning and development process](#planninganddevelopmentprocess)
-*[the winner funcition](#thewinnerfuncition)
 
 ## Technologies
 
@@ -45,12 +37,13 @@
 
 ### the winner funcition
 
-```
+``` java script
 if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
         removeAllEvent();
        MessageWin();
     }
    ```
+
 if the element of the same line (example) have the same value and not null , upload message win and remove all events listener to stop clicks in games .
 
 ## Usage
