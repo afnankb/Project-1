@@ -1,6 +1,6 @@
 // create event 
 const eventType = 'click';
-// create number of click to know who is click first player or second and as a conter of clickes
+// create number of click to know who is click first player or second and as a counter of clicks
 let numberOfclick = 0;
 // create list to add if it's X or o 
 const XOrOList = [];
@@ -18,7 +18,7 @@ let winOCounter = 0;
 let tieCounter = 0;
 // Boolean  to know if select one player or two 
 let oneplayerState = false;
-let PLayAginForComputer = 'f';
+let PLayAginForComputer = 'false';
 // create query selector for all element 
 const number0 = document.querySelector('#number0');
 const number1 = document.querySelector('#number1');
@@ -30,9 +30,9 @@ const number6 = document.querySelector('#number6');
 const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 const startgame = document.querySelector("#start");
+
 const oneplayer = document.querySelector("#oneplayer");
 const twoplayer = document.querySelector("#twoplayer");
-
 
 // funcition to play the sound when user click 
 function myPlay() {
@@ -41,7 +41,7 @@ function myPlay() {
 }
 
 
-// click back if player click one player 
+// call back if player click one player 
 
 const callBackOnePlayer = function () {
 
@@ -49,20 +49,19 @@ const callBackOnePlayer = function () {
     startgame.addEventListener(eventType, play);
     myPlay();
     oneplayerState = true;
-    PLayAginForComputer = "t";
+    PLayAginForComputer = "true";
     const playerTwoConterName = document.querySelector("#player2");
     playerTwoConterName.innerHTML = "O (computer)";
     twoplayer.removeEventListener(eventType, callBackTwoPlayer)
 
 }
-// click back if player click two player 
+// call back if player click two player 
 const callBackTwoPlayer = function () {
 
     oneplayer.setAttribute("id", "none")
     startgame.addEventListener(eventType, play);
     myPlay();
     oneplayer.removeEventListener(eventType, callBackOnePlayer)
-
 
 }
 
@@ -74,7 +73,8 @@ const callBackTwoPlayer = function () {
 // 4. set src attribute and width 
 // 5. append the img to the page 
 // 6. remove event listener to anable the user to click again
-// 7 . know if the user win or lose or tie 
+// 7. know if the user win or lose or tie 
+
 
 const myCallback0 = function () {
     myPlay();
@@ -213,11 +213,11 @@ const myCallback8 = function () {
     setTimeout("playWithComputer()", 800);
 }
 
-// Funcition win or lose 
-// 1. check first if the element  not null
-// 2. check if all 3 element have the same value 
-// 3. shake the img 
-// 4. set timer to sure the img is upload
+// Function win or lose
+// 1. check first if the element not null
+// 2. check if all 3 element have the same value
+// 3. shake the img
+// 4. set timer to sure the image is upload
 
 const winORLose = function () {
 
@@ -340,7 +340,7 @@ const MessageTie = function () {
 
 
 
-// select who is play 
+// select who is play and the img  
 const selectXorO = function (index) {
     // x
     const lastElement = unorderList.length;
@@ -369,11 +369,9 @@ const selectXorO = function (index) {
 
 
 
-
-
-// funcition to empty all imformation to play again 
+// funcition to remove all imformation to play again 
 const playAgain = function () {
-    PLayAginForComputer = "t";
+    PLayAginForComputer = "true";
 
 
     play();
@@ -467,7 +465,7 @@ const playAgain = function () {
 
 // when user click one player 
 const playWithComputer = function () {
-    if (PLayAginForComputer === "t") {
+    if (PLayAginForComputer === "true") {
         if ((oneplayerState === true) && (numberOfclick % 2 !== 0)) {
             const randomNumber = Math.floor(Math.random() * 8);
             const IsAvalible = checkAvalibility(randomNumber);
@@ -535,7 +533,7 @@ const removeAllEvent = function () {
     number6.removeEventListener(eventType, myCallback6);
     number7.removeEventListener(eventType, myCallback7);
     number8.removeEventListener(eventType, myCallback8);
-    PLayAginForComputer = false;
+    PLayAginForComputer = "false";
 }
 //start game 
 

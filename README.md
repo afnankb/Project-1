@@ -32,7 +32,7 @@
 
 ### the winner funcition
 
-``` java script
+``` java
 if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
         removeAllEvent();
        MessageWin();
