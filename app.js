@@ -33,16 +33,12 @@ const startgame = document.querySelector("#start");
 //create query selector for one player and two player 
 const oneplayer = document.querySelector("#oneplayer");
 const twoplayer = document.querySelector("#twoplayer");
-
 // funcition to play the sound when user click 
 function myPlay() {
     var audio = new Audio("Click.mp3");
     audio.play();
 }
-
-
 // call back if player click one player 
-
 const callBackOnePlayer = function () {
     //remove two player border 
     twoplayer.setAttribute("id", "none")
@@ -54,7 +50,6 @@ const callBackOnePlayer = function () {
     const playerTwoConterName = document.querySelector("#player2");
     playerTwoConterName.innerHTML = "O (computer)";
     twoplayer.removeEventListener(eventType, callBackTwoPlayer)
-
 }
 // call back if player click two player 
 const callBackTwoPlayer = function () {
@@ -65,8 +60,6 @@ const callBackTwoPlayer = function () {
     oneplayer.removeEventListener(eventType, callBackOnePlayer)
 
 }
-
-
 // create funcitons to call back if the user click
 // 1. create img element 
 // 2. select the type of img 
@@ -75,8 +68,6 @@ const callBackTwoPlayer = function () {
 // 5. append the img to the page 
 // 6. remove event listener to anable the user to click again
 // 7. know if the user win or lose or tie 
-
-
 const myCallback0 = function () {
     // play sound 
     myPlay();
@@ -92,7 +83,6 @@ const myCallback0 = function () {
     number0.removeEventListener(eventType, myCallback0);
     winORLose();
     playWithComputer();
-
 }
 
 const myCallback1 = function () {
@@ -123,7 +113,6 @@ const myCallback2 = function () {
     number2.removeEventListener(eventType, myCallback2)
     winORLose();
     setTimeout("playWithComputer()", 800);
-
 }
 
 const myCallback3 = function () {
@@ -215,13 +204,11 @@ const myCallback8 = function () {
     winORLose();
     setTimeout("playWithComputer()", 800);
 }
-
 // Function win or lose
 // 1. check first if the elements not null
 // 2. check if all 3 element have the same value
 // 3. shake the img
 // 4. set timer to sure the image is upload
-
 const winORLose = function () {
 
     if ((XOrOList[0] != null) && (XOrOList[1] != null) && (XOrOList[2] != null) && (XOrOList[0] === XOrOList[1]) && (XOrOList[0] === XOrOList[2])) {
@@ -231,125 +218,91 @@ const winORLose = function () {
         removeAllEvent();
         // put timer because upload message win or tie before the img uploaded
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
         number3.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[6] != null) && (XOrOList[7] != null) && (XOrOList[8] != null) && (XOrOList[6] === XOrOList[7]) && (XOrOList[6] === XOrOList[8])) {
         number6.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[0] != null) && (XOrOList[3] != null) && (XOrOList[6] != null) && (XOrOList[0] === XOrOList[3]) && (XOrOList[0] === XOrOList[6])) {
         number0.setAttribute("class", "shake")
         number3.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[1] != null) && (XOrOList[4] != null) && (XOrOList[7] != null) && (XOrOList[1] === XOrOList[4]) && (XOrOList[1] === XOrOList[7])) {
         number1.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number7.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[2] != null) && (XOrOList[5] != null) && (XOrOList[8] != null) && (XOrOList[2] === XOrOList[5]) && (XOrOList[2] === XOrOList[8])) {
         number2.setAttribute("class", "shake")
         number5.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[0] != null) && (XOrOList[4] != null) && (XOrOList[8] != null) && (XOrOList[0] === XOrOList[4]) && (XOrOList[0] === XOrOList[8])) {
         number0.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number8.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
     } else if ((XOrOList[2] != null) && (XOrOList[4] != null) && (XOrOList[6] != null) && (XOrOList[2] === XOrOList[4]) && (XOrOList[2] === XOrOList[6])) {
         number2.setAttribute("class", "shake")
         number4.setAttribute("class", "shake")
         number6.setAttribute("class", "shake")
         removeAllEvent();
         setTimeout("MessageWin()", 500);
-
         // if the number of click equal to 9 so no one win 
     } else if (numberOfclick === 9) {
-
         setTimeout("MessageTie()", 500);
-        
-
     } else {
          //  else if no one win or tie , know who is next 
         whoIsPlayNext = document.querySelector("#whoIsNext");
         if (numberOfclick % 2 == 0) {
             whoIsPlayNext.innerHTML = " next play x ";
-
         } else {
             whoIsPlayNext.innerHTML = " next play o ";
-
         }
     }
-
 }
-
 //  massege to tell the user you are win 
 const MessageWin = function () {
      // last element in the list 
     const lastElement = unorderList.length;
-
     theWin = document.querySelector("#whoIsNext");
-
     theWin.innerHTML = " the winner is " + unorderList[lastElement - 1];
-
-    if (unorderList[lastElement - 1] === "x") {
+      if (unorderList[lastElement - 1] === "x") {
         // increse the winner counter for x 
         winXCounter++;
     } else {
         // increse the winner counter for o
         winOCounter++;
     }
-
-    // change the img to play again img 
+      // change the img to play again img 
     startgame.setAttribute("src", "play-again.png");
-
     startgame.addEventListener(eventType, playAgain);
-
-
 }
-
-
-
 //  massege to tell the users you are tie 
 const MessageTie = function () {
     tieCounter++;
     const lastElement = unorderList.length;
-
     theWin = document.querySelector("#whoIsNext");
     theWin.innerHTML = " tie   ";
-
-
     // change the img to play again img 
     startgame.setAttribute("src", "play-again.png");
-    startgame.addEventListener(eventType, playAgain);
-
+   startgame.addEventListener(eventType, playAgain);
 }
-
-
-
 // select who is play and the img  
 const selectXorO = function (index) {
-   
-    const lastElement = unorderList.length;
-
+   const lastElement = unorderList.length;
      // x
     if (numberOfclick % 2 == 0) {
         // add it to the list 
@@ -357,31 +310,21 @@ const selectXorO = function (index) {
         unorderList[conterList++] = "x";
         indexList[conterIndexList++] = index;
         return ("x.png")
-
     }
-
     // O
     else {
         XOrOList[index] = "o";
         unorderList[conterList++] = "o";
         indexList[conterIndexList++] = index;
         return ("o.png")
-
-
     }
-
 }
-
-
-
 // funcition to remove all imformation to play again 
 const playAgain = function () {
     // for make user play again it he/she select one player 
     PLayAginForComputer = "true";
-
    // add all event listner again
     play();
-
       // to remove all img 
     for (let i = 0; i <= indexList.length; i++) {
         if (indexList[i] === 0) {
@@ -422,8 +365,6 @@ const playAgain = function () {
             image8.remove();
             number8.setAttribute("class", "");
         }
-
-
     }
     // all list to null and counter to zero 
     XOrOList.length = 0;
@@ -431,33 +372,22 @@ const playAgain = function () {
     indexList.length = 0;
     conterList = 0;
     numberOfclick = 0;
-
     // remove who is win or tie text 
     removeTheword = document.querySelector("#whoIsNext");
     removeTheword.innerHTML = " Tic,Tac,Toe";
-
     // explore the count number in page 
     xCont = document.querySelector("#xCount");
-
     if (winXCounter === 0) {
         xCont.innerHTML = "zero";
-
     } else {
         xCont.innerHTML = winXCounter;
     }
-
-
     oCont = document.querySelector("#TieCount");
-
     if (winOCounter === 0) {
         oCont.innerHTML = "zero";
-
     } else {
         oCont.innerHTML = winOCounter;
     }
-
-
-
     tCont = document.querySelector("#OCount");
     if (tieCounter === 0) {
         tCont.innerHTML = "zero";
@@ -465,21 +395,16 @@ const playAgain = function () {
     } else {
         tCont.innerHTML = tieCounter;
     }
-
-
 }
-
 // when user click one player 
 const playWithComputer = function () {
     if (PLayAginForComputer === "true") {
         if ((oneplayerState === true) && (numberOfclick % 2 !== 0)) {
             const randomNumber = Math.floor(Math.random() * 8);
-            
             const IsAvalible = checkAvalibility(randomNumber);
             if (IsAvalible === false && numberOfclick <= 8) {
                 //start the funcition again 
                 playWithComputer();
-
             } else if (randomNumber === 0 && IsAvalible === true) {
                 myCallback0();
             } else if (randomNumber === 1 && IsAvalible === true) {
@@ -499,38 +424,24 @@ const playWithComputer = function () {
             } else if (randomNumber === 8 && IsAvalible === true) {
                 myCallback8();
             }
-
        } //iF   
     }
 }
-
-
-
 // check if this element null or full 
 const checkAvalibility = function (index) {
     let theReturn;
     for (let i = 0; i <= XOrOList.length; i++) {
-
         if ((XOrOList[index] === "x") || (XOrOList[index] === "o")) {
-
             theReturn = false;
-
         } else {
-
             theReturn = true;
         }
-
-
     } //for
 
     return theReturn;
 }
-
-
-
 // remove all event listner
 const removeAllEvent = function () {
-
     number0.removeEventListener(eventType, myCallback0);
     number1.removeEventListener(eventType, myCallback1);
     number2.removeEventListener(eventType, myCallback2);
@@ -556,9 +467,6 @@ const play = function () {
     number6.addEventListener(eventType, myCallback6);
     number7.addEventListener(eventType, myCallback7);
     number8.addEventListener(eventType, myCallback8);
-
 }
-
-
 oneplayer.addEventListener(eventType, callBackOnePlayer);
 twoplayer.addEventListener(eventType, callBackTwoPlayer);
