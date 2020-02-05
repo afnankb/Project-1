@@ -10,13 +10,13 @@ const indexList = [];
 let conterIndexList = 0;
 //create list to add element un orderd to know last element 
 const unorderList = [];
-//conter to know who win many times x or o
+//counter to know who is  win many times x or o
 let winXCounter = 0;
-//conter to know who win many times o or x 
+//counter to know who is win many times o or x 
 let winOCounter = 0;
-// conter to know who many times  of tie 
+// counter to know who many times  tie
 let tieCounter = 0;
-// Boolean  to know if select one player or two 
+// Boolean to know if select one player or two 
 let oneplayerState = false;
 let PLayAginForComputer = 'false';
 // create query selector for all element 
@@ -30,7 +30,7 @@ const number6 = document.querySelector('#number6');
 const number7 = document.querySelector('#number7');
 const number8 = document.querySelector('#number8');
 const startgame = document.querySelector("#start");
-
+//create query selector for one player and two player 
 const oneplayer = document.querySelector("#oneplayer");
 const twoplayer = document.querySelector("#twoplayer");
 
@@ -44,8 +44,9 @@ function myPlay() {
 // call back if player click one player 
 
 const callBackOnePlayer = function () {
-
+    //remove two player border 
     twoplayer.setAttribute("id", "none")
+    // add event listner to play game img 
     startgame.addEventListener(eventType, play);
     myPlay();
     oneplayerState = true;
@@ -66,7 +67,7 @@ const callBackTwoPlayer = function () {
 }
 
 
-// create funcitons to click back if the user click
+// create funcitons to call back if the user click
 // 1. create img element 
 // 2. select the type of img 
 // 3. increce the number of click 
@@ -77,8 +78,10 @@ const callBackTwoPlayer = function () {
 
 
 const myCallback0 = function () {
+    // play sound 
     myPlay();
     const img = document.createElement("img");
+    // to know but x or o by number of clicks 
     const scr = selectXorO(0);
     numberOfclick++;
     img.setAttribute("src", scr);
@@ -86,7 +89,7 @@ const myCallback0 = function () {
     img.setAttribute("class", "imgGame0");
     const newImg = document.querySelector("#number0");
     newImg.append(img);
-    number0.removeEventListener(eventType, myCallback0)
+    number0.removeEventListener(eventType, myCallback0);
     winORLose();
     playWithComputer();
 
@@ -214,7 +217,7 @@ const myCallback8 = function () {
 }
 
 // Function win or lose
-// 1. check first if the element not null
+// 1. check first if the elements not null
 // 2. check if all 3 element have the same value
 // 3. shake the img
 // 4. set timer to sure the image is upload
@@ -226,6 +229,7 @@ const winORLose = function () {
         number1.setAttribute("class", "shake")
         number2.setAttribute("class", "shake")
         removeAllEvent();
+        // put timer because upload message win or tie before the img uploaded
         setTimeout("MessageWin()", 500);
 
     } else if ((XOrOList[3] != null) && (XOrOList[4] != null) && (XOrOList[5] != null) && (XOrOList[3] === XOrOList[4]) && (XOrOList[3] === XOrOList[5])) {
@@ -281,10 +285,10 @@ const winORLose = function () {
     } else if (numberOfclick === 9) {
 
         setTimeout("MessageTie()", 500);
-        // to know who is next 
+        
 
     } else {
-
+         //  else if no one win or tie , know who is next 
         whoIsPlayNext = document.querySelector("#whoIsNext");
         if (numberOfclick % 2 == 0) {
             whoIsPlayNext.innerHTML = " next play x ";
@@ -299,10 +303,11 @@ const winORLose = function () {
 
 //  massege to tell the user you are win 
 const MessageWin = function () {
-
+     // last element in the list 
     const lastElement = unorderList.length;
 
     theWin = document.querySelector("#whoIsNext");
+
     theWin.innerHTML = " the winner is " + unorderList[lastElement - 1];
 
     if (unorderList[lastElement - 1] === "x") {
@@ -342,10 +347,10 @@ const MessageTie = function () {
 
 // select who is play and the img  
 const selectXorO = function (index) {
-    // x
+   
     const lastElement = unorderList.length;
 
-
+     // x
     if (numberOfclick % 2 == 0) {
         // add it to the list 
         XOrOList[index] = "x";
@@ -371,11 +376,13 @@ const selectXorO = function (index) {
 
 // funcition to remove all imformation to play again 
 const playAgain = function () {
+    // for make user play again it he/she select one player 
     PLayAginForComputer = "true";
 
-
+   // add all event listner again
     play();
 
+      // to remove all img 
     for (let i = 0; i <= indexList.length; i++) {
         if (indexList[i] === 0) {
             const image0 = document.querySelector(".imgGame0");
@@ -391,7 +398,6 @@ const playAgain = function () {
             image2.remove();
             number2.setAttribute("class", "");
         } else if (indexList[i] === 3) {
-
             const image3 = document.querySelector(".imgGame3");
             image3.remove();
             number3.setAttribute("class", "");
@@ -419,14 +425,14 @@ const playAgain = function () {
 
 
     }
-    // all list to null and conter to zero ß
+    // all list to null and counter to zero 
     XOrOList.length = 0;
     unorderList.length = 0;
     indexList.length = 0;
     conterList = 0;
     numberOfclick = 0;
 
-
+    // remove who is win or tie text 
     removeTheword = document.querySelector("#whoIsNext");
     removeTheword.innerHTML = " Tic,Tac,Toe";
 
@@ -468,6 +474,7 @@ const playWithComputer = function () {
     if (PLayAginForComputer === "true") {
         if ((oneplayerState === true) && (numberOfclick % 2 !== 0)) {
             const randomNumber = Math.floor(Math.random() * 8);
+            
             const IsAvalible = checkAvalibility(randomNumber);
             if (IsAvalible === false && numberOfclick <= 8) {
                 //start the funcition again 
@@ -533,6 +540,7 @@ const removeAllEvent = function () {
     number6.removeEventListener(eventType, myCallback6);
     number7.removeEventListener(eventType, myCallback7);
     number8.removeEventListener(eventType, myCallback8);
+    // equale it to false to stop game and stop clicks
     PLayAginForComputer = "false";
 }
 //start game 
